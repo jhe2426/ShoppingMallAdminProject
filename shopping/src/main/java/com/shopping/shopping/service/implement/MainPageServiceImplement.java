@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.shopping.shopping.common.constant.ResponseMessage;
 import com.shopping.shopping.dto.request.PostSignInRequestDto;
 import com.shopping.shopping.dto.response.ResponseDto;
 import com.shopping.shopping.service.MainPageService;
@@ -19,8 +20,15 @@ public class MainPageServiceImplement implements MainPageService {
 
     @Override
     public ResponseEntity<ResponseDto> signIn(PostSignInRequestDto dto) {
+
+        String inputAdminId = dto.getAdminId();
+        String inputAdminPasword = dto.getAdminPassword();
+
+        if (!adminId.equals(inputAdminId)) return ResponseMessage.SIGN_IN_FAILED;
         
-        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto("SU", "SUCCESS"));
+        if (!adminPassword.equals(inputAdminPasword)) return ResponseMessage.SIGN_IN_FAILED;
+
+        return ResponseMessage.SUCCESS;
     }
     
 }

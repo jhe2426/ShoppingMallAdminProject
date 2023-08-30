@@ -29,7 +29,7 @@ public class CategoryDetailEntity {
     @JoinColumn(name = "category_type_number")
     private CategoryTypeEntity categoryTypeEntity;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 30, unique =true)
     private String categoryDetail;
 
 

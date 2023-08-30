@@ -24,16 +24,18 @@ let index = {
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             dataType: "TEXT",
-            success: function(response, textStatus, jqXHR) {
-                window.location.replace("http://localhost:4000/api/v1/admin/main");
+            success: function(response,statusText,jqXHR) {
+                var status = jqXHR.status
+                if (status == 200) {
+                    window.location.replace("http://localhost:4000/api/v1/admin/main");
+                }
             },
             error: function(jqXHR) {
+                var status = jqXHR.status;	
                 
-                var status = jqXHR.status;
-                if (status = 500) {
-                    alert("500코드 출력");
+                if (status == 400) {
+                    alert ("아이디와 비밀번호가 틀렸습니다.");
                 }
-                alert(JSON.stringify(jqXHR, ["status"]));   				
             }
 		});
 

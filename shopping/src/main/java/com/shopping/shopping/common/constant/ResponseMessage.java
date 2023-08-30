@@ -11,4 +11,7 @@ public interface ResponseMessage {
 
     public static final ResponseEntity<ResponseDto> VAILDATION_FAILED 
     = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto("VF", "Request Parameter Validation Failed"));
+
+    public static final ResponseEntity<ResponseDto> SIGN_IN_FAILED 
+    = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto("SF", "Sign In Failed"));
 }
