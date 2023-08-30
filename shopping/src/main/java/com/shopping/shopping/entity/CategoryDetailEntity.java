@@ -1,8 +1,8 @@
 package com.shopping.shopping.entity;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,28 +17,20 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Product")
-@Table(name = "Product")
-public class ProductEntity {
+@Entity(name = "Categorydetail")
+@Table(name = "Categorydetail")
+public class CategoryDetailEntity {
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int productNumber;
+    private int categoryDetailNumber;
 
-    @ManyToOne
-    @JoinColumn(name = "category_detail_number")
-    private CategoryDetailEntity categoryDetailEntity;
-
-    @Column(nullable = false, length = 512)
-    private String imageUrl;
-
-    private int price;
-
-    @Column(nullable = false, length = 30)
-    private String categoryType;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_type_number")
+    private CategoryTypeEntity categoryTypeEntity;
 
     @Column(nullable = false, length = 30)
     private String categoryDetail;
-    
-    @Column(nullable = false, length = 19)
-    private String createDate;
+
+
 }

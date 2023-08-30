@@ -1,0 +1,92 @@
+.payment-content {
+    margin-top: 0px;
+    margin-left: 440px;
+    padding-top: 100px;
+    width: 1200px;
+}
+
+.payment-title {
+    display: flex;
+    margin-left: 30px;
+    width: 1200px;
+    justify-content: space-between;
+}
+
+.payment-title > p {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: -1px;
+    width: 250px;
+}
+
+.payment-title-line {
+    margin-top: 10px;
+    margin-left: 32px;
+    border-bottom: 1px solid black;
+    width: 1200px;
+    margin-bottom: 15px;
+}
+
+.payment-table-title {
+    text-align: center;
+    margin-left: 33px;
+ }
+
+ .payment-line {
+    margin-left: 32px;
+    border-bottom: 1px solid #CDCDCD;
+    width: 1200px;
+    margin-bottom: 15px;
+}
+
+.payment-table-title > .table-title{
+    margin-top: 15px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+}
+
+.list-crate-date {
+    margin-left: -25px;
+    margin-right: 25px;
+}
+.payment-table-content {
+    margin-left: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+}
+
+.payment-image {
+    margin-left: 66px;
+    margin-right: 15px;
+    width: 100px;
+    height: 100px;
+}
+
+.payment-text {
+    margin-top: 36px;
+    color: #000;
+}
+
+.payment-text > .list-second-category {
+    margin-left: 35px;
+    margin-right: -35px;
+}
+
+.payment-text > .list-create-date {
+    margin-left: 40px;
+    margin-right: -10px;
+}
+
+.pagination {
+    margin-top: 30px;
+    margin-left: 80px;
+}
+
