@@ -2,8 +2,8 @@ package com.shopping.shopping.service;
 
 import java.util.List;
 
-import com.shopping.shopping.dto.response.CategoryDto;
+import com.shopping.shopping.dto.response.CategoryResponseDto;
 
 public interface CategoryService {
-    public List<CategoryDto> getCateogryList();
+    public List<CategoryResponseDto> getCateogryList();
 }

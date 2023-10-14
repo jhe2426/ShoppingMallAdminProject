@@ -16,16 +16,16 @@
 </head>
 <body>
     <nav>
-        <div class="side-title"><a href="#">관리자 모드</a></div>
+        <div class="side-title"><a href="/api/v1/admin/main" title="메인 페이지로 이동">관리자 모드</a></div>
         <ul class="side-menu">
             <li class="menu-dropdown">
                 <span>상품관리 <i class="fas fa-chevron-down"></i></span>
                 <ul class="dropdown hide">
-                    <li><a href="#" title="상품 등록">상품 등록</a></li>
+                    <li><a href="/api/v1/admin/product" title="상품 등록">상품 등록</a></li>
                     <li><a href="#" title="상품 목록">상품 목록</a></li>
                 </ul>
             </li>
-            <li><a href='#' title="결제 내역">결제 내역</a></li>
+            <li><a href="" title="결제 내역">결제 내역</a></li>
             <li><a href='#' title="로그아웃">LOGOUT</a></li>
         </ul>
     </nav>

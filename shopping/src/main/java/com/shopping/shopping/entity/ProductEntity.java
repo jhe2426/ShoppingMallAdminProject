@@ -16,10 +16,12 @@ import javax.persistence.Table;
 import com.shopping.shopping.dto.request.PostProductRequestDto;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity(name = "Product")
 @Table(name = "Product")
 public class ProductEntity {

@@ -11,12 +11,12 @@ import lombok.ToString;
 
 @Getter
 @ToString
-public class CategoryDto {
+public class CategoryResponseDto {
     private int categoryTypeNumber;
     private String categoryType;
     private List<CategoryDetailDto> categoryDetailDtoList;
 
-    public CategoryDto(CategoryTypeEntity categoryTypeEntity, List<CategoryDetailEntity> categoryDetailList) {
+    public CategoryResponseDto(CategoryTypeEntity categoryTypeEntity, List<CategoryDetailEntity> categoryDetailList) {
         List<CategoryDetailDto> categoryDetailDtoList = new ArrayList<>();
 
         for(CategoryDetailEntity categoryDetailEntity: categoryDetailList) {

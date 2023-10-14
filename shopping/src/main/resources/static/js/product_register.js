@@ -44,6 +44,7 @@ let index = {
                 var status = jqXHR.status;
                 if (status == 200) {
                     alert("정상적으로 상품 등록이 완료되었습니다.");
+                    window.location.replace("http://localhost:4000/api/v1/admin/main");
                 }
             },
             error: function(jqXHR) {

@@ -3,6 +3,8 @@ package com.shopping.shopping.service.implement;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -77,5 +79,16 @@ public class ProductServiceImplement implements ProductService {
         String uploadFileName =  fileName + fileExtension;
 
         return uploadFileName;
+    }
+
+    @Override
+    public Page<ProductEntity> getProductList(Pageable pageable) {
+        Page<ProductEntity> body = null;
+        try {
+            body = productRepository.findAll(pageable);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        return body;
     }
 }

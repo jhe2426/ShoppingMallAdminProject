@@ -18,7 +18,7 @@
                         <span class="cmode-box">
                             <select name="cmode1" class="cmode1">
                                 <option value="">1차 분류</option>
-                                <c:forEach items="${list}" var="category">  
+                                <c:forEach items="${categoryList}" var="category">  
                                     <option value="${category.categoryTypeNumber}">${category.categoryType}</option>
                                 </c:forEach>
                             </select>
@@ -41,7 +41,7 @@
                                         }
                                         var categoryDetailList = new Array();
 
-                                        <c:forEach items="${list}" var="category">
+                                        <c:forEach items="${categoryList}" var="category">
                                             categoryTypeList.push("${category.categoryTypeNumber}");
                                             <c:forEach items="${category.categoryDetailDtoList}" var="categoryDetailList">
                                                 categoryDetailList.push(new categoryDetail("${categoryDetailList.categoryTypeNumber}", "${categoryDetailList.categoryDetailNumber}", "${categoryDetailList.categoryDetail}"));
