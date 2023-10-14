@@ -1,22 +1,21 @@
 package com.shopping.shopping.entity;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity(name = "User")
 @Table(name = "User")
 public class UserEntity {
     @Id
-    @Column(length = 254)
+    @Column(length = 25)
     private String email;
 }

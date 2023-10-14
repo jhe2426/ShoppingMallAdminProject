@@ -28,7 +28,7 @@
         <ul class="table-content">
             <div class="product" href="">
             <li class="product-text">No.1</li>
-            <li><img class="product-image" src="/image/productImage/earring1.jpg" alt=""></li>
+            <li><img class="product-image" src="https://shopping-mall-sss-bucket.s3.ap-northeast-2.amazonaws.com/earring1_1696921673159.jpg" alt=""></li>
             <li class="product-text list-price">10033원</li>
             <li class="product-text">귀걸이</li>
             <li class="product-text list-second-category">볼드</li>
@@ -132,6 +132,4 @@
 
 
 
-    <script src="/js/nav.js"></script>
-</body>
-</html>
+<%@ include file="layout/footer.jsp"%>
