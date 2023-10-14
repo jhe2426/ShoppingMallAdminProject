@@ -108,7 +108,7 @@
     
             <div class="bottom">
                 <div class="bottombtn">
-                    <input type="submit" id="post-product-button" value="저장">
+                    <input type="button" id="post-product-button" value="저장">
                     <input type="button" id="get-product-list-button" value="목록">   
                 </div>
             </div>
