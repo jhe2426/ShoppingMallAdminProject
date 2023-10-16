@@ -10,7 +10,7 @@
     <title>관리자 페이지</title>
     <script src="https://kit.fontawesome.com/e6f78261b2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/register_goods.css">
+    <link rel="stylesheet" href="/css/user_payment_list.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="/js/jquery.js"></script>
 </head>
@@ -22,10 +22,10 @@
                 <span>상품관리 <i class="fas fa-chevron-down"></i></span>
                 <ul class="dropdown hide">
                     <li><a href="/api/v1/admin/product" title="상품 등록">상품 등록</a></li>
-                    <li><a href="#" title="상품 목록">상품 목록</a></li>
+                    <li><a href="/api/v1/admin/main" title="상품 목록">상품 목록</a></li>
                 </ul>
             </li>
-            <li><a href="" title="결제 내역">결제 내역</a></li>
-            <li><a href='#' title="로그아웃">LOGOUT</a></li>
+            <li><a href="/api/v1/admin/payment" title="결제 내역">결제 내역</a></li>
+            <li><a href="/api/v1/admin/login" title="로그아웃">LOGOUT</a></li>
         </ul>
     </nav>

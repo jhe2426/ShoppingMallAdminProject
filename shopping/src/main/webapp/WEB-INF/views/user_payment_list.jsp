@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="layout/header.jsp"%>
 
@@ -20,94 +21,44 @@
                 <li class="list-crate-date">작성날짜</li>
             </ul>
         </div>
+
+        <c:forEach var="payment" items="${paymentList.content}">
+            <div class="payment-line"></div>
+
+            <ul class="payment-table-content">
+                <div class="payment" href="">
+                <li class="payment-text">${payment.ordersNumber}</li>
+                <li><img class="payment-image" src="${payment.productEntity.imageUrl}" alt="상품이미지"></li>
+                <li class="payment-text">${payment.userEntity.email}</li>
+                <li class="payment-text list-price">${payment.totalPrice}원</li>
+                <li class="payment-text list-second-category">${payment.totalOrderCount}개</li>
+                <li class="payment-text list-create-date">${payment.ordersDate}</li>
+                </div>
+            </ul>
+        </c:forEach>
+
         
-        <div class="payment-line"></div>
-
-
-        <ul class="payment-table-content">
-            <div class="payment" href="">
-            <li class="payment-text">1</li>
-            <li><img class="payment-image" src="/image/productImage/earring1.jpg" alt=""></li>
-            <li class="payment-text">jhe2426@naver.com</li>
-            <li class="payment-text list-price">10033원</li>
-            <li class="payment-text list-second-category">10개</li>
-            <li class="payment-text list-create-date">2023-08-28 16-23</li>
-            </div>
-        </ul>
-
-
 
         <div class="payment-line"></div>
-
-
-        <ul class="payment-table-content">
-            <div class="payment" href="">
-            <li class="payment-text">1</li>
-            <li><img class="payment-image" src="/image/productImage/earring1.jpg" alt=""></li>
-            <li class="payment-text">jhe2426@naver.com</li>
-            <li class="payment-text list-price">10033원</li>
-            <li class="payment-text list-second-category">10개</li>
-            <li class="payment-text list-create-date">2023-08-28 16-23</li>
-            </div>
-        </ul>
-
-
-
-        <div class="payment-line"></div>
-
-        <ul class="payment-table-content">
-            <div class="payment" href="">
-            <li class="payment-text">1</li>
-            <li><img class="payment-image" src="/image/productImage/earring1.jpg" alt=""></li>
-            <li class="payment-text">jhe2426@naver.com</li>
-            <li class="payment-text list-price">10033원</li>
-            <li class="payment-text list-second-category">10개</li>
-            <li class="payment-text list-create-date">2023-08-28 16-23</li>
-            </div>
-        </ul>
-
-
-
-        <div class="payment-line"></div>
-
-
-        <ul class="payment-table-content">
-            <div class="payment" href="">
-            <li class="payment-text">1</li>
-            <li><img class="payment-image" src="/image/productImage/earring1.jpg" alt=""></li>
-            <li class="payment-text">jhe2426@naver.com</li>
-            <li class="payment-text list-price">10033원</li>
-            <li class="payment-text list-second-category">10개</li>
-            <li class="payment-text list-create-date">2023-08-28 16-23</li>
-            </div>
-        </ul>
-
-
-
-        <div class="payment-line"></div>
-
-
-        <ul class="payment-table-content">
-            <div class="payment" href="">
-            <li class="payment-text">1</li>
-            <li><img class="payment-image" src="/image/productImage/earring1.jpg" alt=""></li>
-            <li class="payment-text">jhe2426@naver.com</li>
-            <li class="payment-text list-price">10033원</li>
-            <li class="payment-text list-second-category">1개</li>
-            <li class="payment-text list-create-date">2023-08-28 16-23</li>
-            </div>
-        </ul>
-
-
-
-
-        <div class="payment-line"></div>
-
-
 
         <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="">이전</a></li>
-            <li class="page-item"><a class="page-link" href="">다음</a></li>
+            <c:choose>
+                <c:when test="${paymentList.first}">
+                    <li class="page-item disabled"><a class="page-link" href="?page=${paymentList.number-1}">이전</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item"><a class="page-link" href="?page=${paymentList.number-1}">이전</a></li>
+                </c:otherwise>
+            </c:choose>
+            
+            <c:choose>
+                <c:when test="${paymentList.last}">
+                    <li class="page-item disabled"><a class="page-link" href="?page=${paymentList.number+1}">다음</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item"><a class="page-link" href="?page=${paymentList.number+1}">다음</a></li>
+                </c:otherwise>
+            </c:choose>
         </ul>
 
     </div>

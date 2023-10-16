@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.shopping.shopping.dto.response.CategoryResponseDto;
+import com.shopping.shopping.dto.response.GetCategoryResponseDto;
 import com.shopping.shopping.entity.CategoryDetailEntity;
 import com.shopping.shopping.entity.CategoryTypeEntity;
 import com.shopping.shopping.repository.CategoryDetailRepository;
@@ -23,9 +23,9 @@ public class CategoryServiceImplement implements CategoryService {
     private final CategoryDetailRepository categoryDetailRepository;
 
     @Override
-    public List<CategoryResponseDto> getCateogryList() {
+    public List<GetCategoryResponseDto> getCateogryList() {
 
-        List<CategoryResponseDto> categoryDtoList = new ArrayList<>();
+        List<GetCategoryResponseDto> categoryDtoList = new ArrayList<>();
 
         try {
             List<CategoryTypeEntity> categoryTypeList = categoryTypeRepository.findAll(Sort.by(Sort.Direction.ASC, "categoryTypeNumber"));
@@ -35,7 +35,7 @@ public class CategoryServiceImplement implements CategoryService {
 
             for(CategoryTypeEntity categoryTypeEntity: categoryTypeList) {
                 List<CategoryDetailEntity> categoryDetailList = categoryDetailRepository.findByCategoryTypeEntity(categoryTypeEntity);
-                CategoryResponseDto categoryDto = new CategoryResponseDto(categoryTypeEntity, categoryDetailList);
+                GetCategoryResponseDto categoryDto = new GetCategoryResponseDto(categoryTypeEntity, categoryDetailList);
                 categoryDtoList.add(categoryDto);
             }
 

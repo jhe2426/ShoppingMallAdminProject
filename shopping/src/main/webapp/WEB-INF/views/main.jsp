@@ -6,7 +6,7 @@
   <div class="content">
         <div class="main-title">
             <p>상품 목록</p>
-            <button class="product-write-button">작성하기</button>
+            <button class="product-write-button"><a href="/api/v1/admin/product">작성하기</a></button>
         </div>
 
         <div class="main-title-line"></div>
@@ -31,7 +31,7 @@
                 <a href="#">
                 <div class="product">
                 <li class="product-text">No.${product.productNumber}</li>
-                <li><img class="product-image" src="${product.imageUrl}" alt=""></li>
+                <li><img class="product-image" src="${product.imageUrl}" alt="상품이미지"></li>
                 <li class="product-text list-price">${product.price}</li>
                 <li class="product-text">${product.categoryDetailEntity.categoryTypeEntity.categoryType}</li>
                 <li class="product-text list-second-category">${product.categoryDetailEntity.categoryDetail}</li>

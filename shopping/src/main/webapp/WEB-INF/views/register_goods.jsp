@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="layout/header.jsp"%>
-
+<link rel="stylesheet" href="/css/register_goods.css">
     <div class="section">
         <form id="form" enctype="multipart/form-data">
             <!-- 상품 기본정보 -->

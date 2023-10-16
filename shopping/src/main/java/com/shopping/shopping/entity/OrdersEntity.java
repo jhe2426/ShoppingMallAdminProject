@@ -39,7 +39,7 @@ public class OrdersEntity {
     @Column(nullable = false)
     private int totalOrderCount;
 
-    @Column(nullable = false, length = 16)
+    @Column(nullable = false, length = 19)
     private String ordersDate;
 
 

@@ -135,9 +135,20 @@ nav .side-menu .menu-dropdown .dropdown { /*toggle을 위함*/
     font-size: 15px;
  }
 
+ .product-write-button > a{
+    color: black;
+ }
+
  .product-write-button:hover {
-    background-color: black;
+    font-size: 15px;
     color: white;
+    background-color: black;
+    border-radius: 20px;
+ }
+
+ .product-write-button:hover > a {
+    color: white;
+    text-decoration: none;
  }
 
 .table-title{
