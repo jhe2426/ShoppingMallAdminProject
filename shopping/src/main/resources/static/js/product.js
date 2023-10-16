@@ -4,6 +4,11 @@ let index = {
             this.postProduct();
             
         });
+
+        $("#product-delete-button").on("click", () => {
+			this.deleteProduct();
+		});
+
     },
 
     postProduct: function() {
@@ -54,7 +59,32 @@ let index = {
                 }
             }
 		});
+    },
+
+    deleteProduct : function() {
+        let productNumber = $("#product-number").val();
+
+        $.ajax({
+            type: "DELETE",
+            url: `/api/v1/admin/product/`+productNumber,
+            dataType: "json",
+            success: function(response,statusText,jqXHR) {
+                var status = jqXHR.status;
+                if (status == 200) {
+                    alert("정상적으로 상품이 삭제되었습니다.");
+                    window.location.replace("http://localhost:4000/api/v1/admin/main");
+                }
+            },
+            error: function(jqXHR) {
+                var status = jqXHR.status;
+                if (status == 500) {
+                    alert("상품 삭제가 실패되었습니다.");
+                }
+            }
+        });
     }
+
+    
 }
 
 index.init();

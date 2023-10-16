@@ -1,6 +1,9 @@
 package com.shopping.shopping.service.implement;
 
+import java.util.List;
 import java.util.UUID;
+
+import org.springframework.transaction.annotation.Transactional;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -15,8 +18,10 @@ import com.shopping.shopping.common.constant.ResponseMessage;
 import com.shopping.shopping.dto.request.PostProductRequestDto;
 import com.shopping.shopping.dto.response.ResponseDto;
 import com.shopping.shopping.entity.CategoryDetailEntity;
+import com.shopping.shopping.entity.FavoriteEntity;
 import com.shopping.shopping.entity.ProductEntity;
 import com.shopping.shopping.repository.CategoryDetailRepository;
+import com.shopping.shopping.repository.FavoriteRepository;
 import com.shopping.shopping.repository.ProductRepository;
 import com.shopping.shopping.service.ProductService;
 
@@ -31,6 +36,7 @@ public class ProductServiceImplement implements ProductService {
     private final AmazonS3Client amazonS3Client;
     private final CategoryDetailRepository categoryDetailRepository;
     private final ProductRepository productRepository;
+    private final FavoriteRepository favoriteRepository;
 
     @Value("${cloud.aws.s3.bucket}")
     private String bucket;
@@ -90,5 +96,31 @@ public class ProductServiceImplement implements ProductService {
             exception.printStackTrace();
         }
         return body;
+    }
+
+    
+    @Override
+    @Transactional
+    public ResponseEntity<ResponseDto> deleteProduct(int productNumber) {
+
+        System.out.println(productNumber);
+
+        try {
+            ProductEntity productEntity = productRepository.findByProductNumber(productNumber);
+
+            List<FavoriteEntity> favoriteList = favoriteRepository.findByProductEntity(productEntity);
+
+            if(!(favoriteList == null)) {
+                favoriteRepository.deleteAll(favoriteList);
+            }
+
+            productRepository.delete(productEntity);
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return ResponseMessage.DATABASE_ERROR;
+        }
+        
+        return ResponseMessage.SUCCESS;
     }
 }

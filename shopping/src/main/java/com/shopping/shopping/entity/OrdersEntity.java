@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,9 +32,11 @@ public class OrdersEntity {
     @JoinColumn(name = "user_email", nullable = false)
     private UserEntity userEntity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_number", nullable = false)
-    private ProductEntity productEntity;
+    @Column(nullable = false)
+    private int productNumber;
+
+    @Column(nullable = false, length = 512)
+    private String productImageUrl;
 
     @Column(nullable = false)
     private int totalPrice;

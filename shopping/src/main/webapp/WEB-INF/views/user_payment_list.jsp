@@ -28,7 +28,7 @@
             <ul class="payment-table-content">
                 <div class="payment" href="">
                 <li class="payment-text">${payment.ordersNumber}</li>
-                <li><img class="payment-image" src="${payment.productEntity.imageUrl}" alt="상품이미지"></li>
+                <li><img class="payment-image" src="${payment.productImageUrl}" alt="상품이미지"></li>
                 <li class="payment-text">${payment.userEntity.email}</li>
                 <li class="payment-text list-price">${payment.totalPrice}원</li>
                 <li class="payment-text list-second-category">${payment.totalOrderCount}개</li>

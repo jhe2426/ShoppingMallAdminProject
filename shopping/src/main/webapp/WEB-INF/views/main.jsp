@@ -30,7 +30,7 @@
             <ul class="table-content">
                 <a href="#">
                 <div class="product">
-                <li class="product-text">No.${product.productNumber}</li>
+                <li class="product-text" id="product-number" value="${product.productNumber}">No.${product.productNumber}</li>
                 <li><img class="product-image" src="${product.imageUrl}" alt="상품이미지"></li>
                 <li class="product-text list-price">${product.price}</li>
                 <li class="product-text">${product.categoryDetailEntity.categoryTypeEntity.categoryType}</li>
@@ -38,7 +38,7 @@
                 <li class="product-text list-create-date">${product.createDate}</li>     
                 </div>
                 </a>
-                <li><button class="product-delete-button">삭제하기</button></li>
+                <li><button onclick="index.deleteProduct()" class="product-delete-button">삭제하기</button></li>
             </ul>
         </c:forEach>
 
@@ -69,5 +69,5 @@
     </div>
  
 
-
+<script src="/js/product.js"></script>
 <%@ include file="layout/footer.jsp"%>

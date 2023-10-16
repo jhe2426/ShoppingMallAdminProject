@@ -11,4 +11,5 @@ import com.shopping.shopping.entity.ProductEntity;
 public interface ProductService {
     public ResponseEntity<ResponseDto> postProduct(PostProductRequestDto dto);
     public Page<ProductEntity> getProductList(Pageable pageable);
+    public ResponseEntity<ResponseDto> deleteProduct(int productNumber);
 }

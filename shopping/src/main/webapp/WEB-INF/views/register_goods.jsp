@@ -116,6 +116,6 @@
     </div>
         
 
-<script src="/js/product_register.js"></script>
+<script src="/js/product.js"></script>
 <script src="/js/register_goods.js"></script>
 <%@ include file="layout/footer.jsp"%>
