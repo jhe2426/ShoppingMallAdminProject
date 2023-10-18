@@ -29,7 +29,7 @@ public class OrdersEntity {
     private int ordersNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_email", nullable = false)
+    @JoinColumn(name = "user_number", nullable = false)
     private UserEntity userEntity;
 
     @Column(nullable = false)
@@ -46,6 +46,4 @@ public class OrdersEntity {
 
     @Column(nullable = false, length = 19)
     private String ordersDate;
-
-
 }

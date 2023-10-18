@@ -2,6 +2,8 @@ package com.shopping.shopping.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,6 +18,9 @@ import lombok.Setter;
 @Table(name = "User")
 public class UserEntity {
     @Id
-    @Column(length = 25)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userNumber;
+
+    @Column(nullable = false, length = 25)
     private String email;
 }

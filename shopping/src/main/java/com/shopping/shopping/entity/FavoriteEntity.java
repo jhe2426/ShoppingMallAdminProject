@@ -31,7 +31,7 @@ public class FavoriteEntity {
     private int favoriteNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_email", nullable = false)
+    @JoinColumn(name = "user_number", nullable = false)
     private UserEntity userEntity;
 
     @ManyToOne(fetch = FetchType.LAZY)

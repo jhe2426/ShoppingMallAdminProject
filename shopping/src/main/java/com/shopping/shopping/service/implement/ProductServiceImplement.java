@@ -103,8 +103,6 @@ public class ProductServiceImplement implements ProductService {
     @Transactional
     public ResponseEntity<ResponseDto> deleteProduct(int productNumber) {
 
-        System.out.println(productNumber);
-
         try {
             ProductEntity productEntity = productRepository.findByProductNumber(productNumber);
 
